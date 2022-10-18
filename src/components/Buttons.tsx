@@ -1,113 +1,98 @@
-import React, { FunctionComponent, useEffect,useContext } from 'react'
-import styled from 'styled-components'
-import { Button, ButtonGroup } from '@chakra-ui/react'
-import { Box,VStack,HStack } from "@chakra-ui/layout";
-import { Digit, Operator } from '../types'
-import {digitContext} from '../App';
+import { FunctionComponent } from 'react'
+import { Button } from '@chakra-ui/react'
+import { Box, VStack, HStack } from "@chakra-ui/layout";
 
 interface ButtonsProps {
-  clickHandler: (type:String) => void
+  clickHandler: (type: String) => void
 }
 
-interface DigitContextInterface {
-  nums: Array<String>;
-  operator: Array<Operator>;
-  misc: Array<String>;
-}
-
-export const Buttons: FunctionComponent<ButtonsProps> = ({
-  clickHandler
-}) => {
-
-const digitCntxt = useContext(digitContext);
-const numpad={
-  0:["AC","+/-","%","/"],
-  1:["7","8","9","*"],
-  2:["4","5","6","-"],
-  3:["1","2","3","+"],
-  4:["0","C",".","="]
-};
-let keys:String[]=Object.keys(numpad);
-  /*const handleKeyDown = ({ keyCode, shiftKey }: KeyboardEvent) => {
-    console.log(keyCode)
-    if (keyCode >= 48 && keyCode <= 57 && !shiftKey) {
-      onDigitButtonClick((keyCode - 48) as Digit)
-    } else if ((keyCode >= 96 && keyCode <= 105)) {
-      onDigitButtonClick((keyCode - 96) as Digit)
-    } else if (keyCode === 107 || (keyCode === 187 && shiftKey)) {
-      onOperatorButtonClick('+')
-    } else if (keyCode === 109 || keyCode === 189) {
-      onOperatorButtonClick('-')
-    } else if (keyCode === 106 || (keyCode === 56 && shiftKey)) {
-      onOperatorButtonClick('×')
-    } else if (keyCode === 111 || keyCode === 191) {
-      onOperatorButtonClick('÷')
-    } else if (keyCode === 13 || (keyCode === 187 && !shiftKey)) {
-      onEqualButtonClick()
-    } else if (keyCode === 46) {
-      onClearEntryButtonClick()
-    } else if (keyCode === 27) {
-      onAllClearButtonClick()
-    } else if (keyCode === 78) {
-      onChangeSignButtonClick()
-    } 
+export const Buttons: FunctionComponent<ButtonsProps> = ({ clickHandler }) => {
+  const btnMisc = {
+    bgColor: '#b4b4b4',
+    color: 'black'
   }
 
-  useEffect(() => {
-    document.body.addEventListener('keydown', handleKeyDown)
-    return () => document.body.removeEventListener('keydown', handleKeyDown)
-  })
-*/
+  const btnOperator = {
+    bgColor: '#ff9900',
+    color: 'white'
+  }
+
+  const btnDigit = {
+    bgColor: '#737373',
+    color: 'white'
+  }
+
   return (
-
-      
-    
     <Box>
-     
-     <VStack>
-     <HStack>
-     {
-            numpad[0].map((num)=>  <Button onClick={() => clickHandler(num)}>
-            {num}
-          </Button>)
-        
-    } 
-  
-      </HStack>
-      <HStack>
-      {
-            numpad[1].map((num)=>  <Button onClick={() => clickHandler(num)}>
-            {num}
-          </Button>)
-        
-    } 
-      </HStack>
-      <HStack>
-      {
-            numpad[2].map((num)=>  <Button onClick={() => clickHandler(num)}>
-            {num}
-          </Button>)
-        
-    } 
-      </HStack>
-     <HStack>
-     {
-            numpad[3].map((num)=>  <Button onClick={() => clickHandler(num)}>
-            {num}
-          </Button>)
-        
-    } 
-     </HStack>
-     <HStack>
-     {
-            numpad[3].map((num)=>  <Button onClick={() => clickHandler(num)}>
-            {num}
-          </Button>)
-        
-    } 
-     </HStack>
-     </VStack>
-
+      <VStack>
+        <HStack>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnMisc.bgColor} color={btnMisc.color} onClick={() => clickHandler('AC')}>
+            AC
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnMisc.bgColor} color={btnMisc.color} onClick={() => clickHandler('C')}>
+            C
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnMisc.bgColor} color={btnMisc.color} onClick={() => clickHandler('SIGN')}>
+            -/+
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('/')}>
+            ÷
+          </Button>
+        </HStack>
+        <HStack>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('7')}>
+            7
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('8')}>
+            8
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('9')}>
+            9
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('*')}>
+            ×
+          </Button>
+        </HStack>
+        <HStack>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('4')}>
+            4
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('5')}>
+            5
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('6')}>
+            6
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('-')}>
+            -
+          </Button>
+        </HStack>
+        <HStack>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('1')}>
+            1
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('2')}>
+            2
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('3')}>
+            3
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('+')}>
+            +
+          </Button>
+        </HStack>
+        <HStack>
+          <Button borderRadius='20px' w='85px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('0')}>
+            0
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('.')}>
+            .
+          </Button>
+          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('=')}>
+            =
+          </Button>
+        </HStack>
+      </VStack>
     </Box>
   )
 }
