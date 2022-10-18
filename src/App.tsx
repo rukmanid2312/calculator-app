@@ -171,7 +171,7 @@ export const App: FunctionComponent = () => {
   }
 
   return (
-    <Flex align="center" justify="center" mt='250px'>
+    <Flex align="center" justify="center" mt='20px'>
       <Box fontSize='40px' bg="black" w='250px' pb='10' alignItems='center'>
         <OutputScreen value={output} expression={typeof firstOperator !== 'undefined' ? `${input}${firstOperator}${secondOperand ? '' : output}` : ''} />
         <Buttons clickHandler={clickHandler} />
