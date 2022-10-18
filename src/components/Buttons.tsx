@@ -22,76 +22,194 @@ export const Buttons: FunctionComponent<ButtonsProps> = ({ clickHandler }) => {
     color: 'white'
   }
 
+  const numpad = [
+    {
+      name: "AC",
+      value: "AC",
+      bg: btnMisc.bgColor,
+      color: btnMisc.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: " C",
+      value: "C",
+      bg: btnMisc.bgColor,
+      color: btnMisc.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "+/-",
+      value: "SIGN",
+      bg: btnMisc.bgColor,
+      color: btnMisc.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "÷",
+      value: "/",
+      bg: btnOperator.bgColor,
+      color: btnOperator.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: " 7",
+      value: "7",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "8",
+      value: "8",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "9",
+      value: "9",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "x",
+      value: "*",
+      bg: btnOperator.bgColor,
+      color: btnOperator.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "4",
+      value: "4",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },{
+      name: "5",
+      value: "5",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },{
+      name: "6",
+      value: "6",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "-",
+      value: "-",
+      bg: btnOperator.bgColor,
+      color: btnOperator.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },{
+      name: "1",
+      value: "1",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },{
+      name: "2",
+      value: "2",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "3",
+      value: "3",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },{
+      name: "+",
+      value: "+",
+      bg: btnOperator.bgColor,
+      color: btnOperator.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "0",
+      value: "0",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '85px',
+      h: '40px',
+      br: '20px'
+    },
+    {
+      name: ".",
+      value: ".",
+      bg: btnDigit.bgColor,
+      color: btnDigit.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    },
+    {
+      name: "=",
+      value: "=",
+      bg: btnOperator.bgColor,
+      color: btnOperator.color,
+      w: '40px',
+      h: '40px',
+      br: '50%'
+    }
+  ]
+const rows=[0,1,2,3,4]
   return (
     <Box>
       <VStack>
-        <HStack>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnMisc.bgColor} color={btnMisc.color} onClick={() => clickHandler('AC')}>
-            AC
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnMisc.bgColor} color={btnMisc.color} onClick={() => clickHandler('C')}>
-            C
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnMisc.bgColor} color={btnMisc.color} onClick={() => clickHandler('SIGN')}>
-            -/+
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('/')}>
-            ÷
-          </Button>
-        </HStack>
-        <HStack>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('7')}>
-            7
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('8')}>
-            8
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('9')}>
-            9
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('*')}>
-            ×
-          </Button>
-        </HStack>
-        <HStack>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('4')}>
-            4
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('5')}>
-            5
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('6')}>
-            6
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('-')}>
-            -
-          </Button>
-        </HStack>
-        <HStack>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('1')}>
-            1
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('2')}>
-            2
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('3')}>
-            3
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('+')}>
-            +
-          </Button>
-        </HStack>
-        <HStack>
-          <Button borderRadius='20px' w='85px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('0')}>
-            0
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnDigit.bgColor} color={btnDigit.color} onClick={() => clickHandler('.')}>
-            .
-          </Button>
-          <Button borderRadius='50%' w='40px' h='40px' bg={btnOperator.bgColor} color={btnOperator.color} onClick={() => clickHandler('=')}>
-            =
-          </Button>
-        </HStack>
+        {
+          rows.map((row)=>{
+            
+            let start=row===0?row:4*row;
+            let end=start+4;
+          return(  <HStack>
+              {
+              numpad.slice(start,end).map((item)=>{
+                return (<Button borderRadius={item.br} w={item.w} h={item.h} bg={item.bg} color={item.color} onClick={() => clickHandler(item.value)}>{item.name}  </Button>)
+              })
+              }
+
+            </HStack>)
+          })
+        }
+          
       </VStack>
     </Box>
   )
